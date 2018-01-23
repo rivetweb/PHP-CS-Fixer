@@ -282,7 +282,7 @@ final class Runner
                 if (preg_match('{^(\s+).+?}', $tmp, $m)) {
                     $indent = $m[1];
                 }
-                $line = substr($tmp, 0, -1) . "\n" . $indent . "{";
+                $line = rtrim(substr($tmp, 0, -1)) . "\n" . $indent . "{";
             }
             $tmp = trim($line);
             if (substr($tmp, 0, 6) == "} else"
