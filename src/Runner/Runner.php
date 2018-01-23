@@ -258,6 +258,9 @@ final class Runner
             ];
         }
 
+        // FIX custom formatting for bitrix
+        $new = $this->fixForBitrix($name);
+
         $this->cacheManager->setFile($name, $new);
 
         $this->dispatchEvent(
@@ -266,6 +269,35 @@ final class Runner
         );
 
         return $fixInfo;
+    }
+
+    // FIX custom formatting for bitrix
+    function fixForBitrix($name) {
+        // TODO process comments after {
+        $result = [];
+        foreach (explode("\n", file_get_contents($name)) as $line) {
+            $tmp = rtrim($line);
+            if (substr($tmp, -1) == "{") {
+                $indent = "";
+                if (preg_match('{^(\s+).+?}', $tmp, $m)) {
+                    $indent = $m[1];
+                }
+                $line = substr($tmp, 0, -1) . "\n" . $indent . "{";
+            }
+            $tmp = trim($line);
+            if (substr($tmp, 0, 6) == "} else"
+                    || substr($tmp, 0, 7) == "} while") {
+                $indent = "";
+                if (preg_match('{^(\s+).+?}', $line, $m)) {
+                    $indent = $m[1];
+                }
+                $line = $indent . "}\n" . $indent . substr($tmp, 2);
+            }
+            $result[] = $line;
+        }
+        $result = implode("\n", $result);
+        file_put_contents($name, $result);
+        return $result;
     }
 
     /**
