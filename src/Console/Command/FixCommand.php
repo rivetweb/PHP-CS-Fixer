@@ -124,6 +124,9 @@ final class FixCommand extends Command
         $verbosity = $output->getVerbosity();
 
         $passedConfig = $input->getOption('config');
+        // FIX init config for Bitrix from this repo
+        $passedConfig = dirname($_SERVER["SCRIPT_FILENAME"]) . "/bitrix.php_cs";
+
         $passedRules = $input->getOption('rules');
 
         $resolver = new ConfigurationResolver(
