@@ -12,6 +12,7 @@
   git clone https://github.com/rivetweb/PHP-CS-Fixer.git
   cd PHP-CS-Fixer
   git checkout bitrix
+  composer install
 ```
 
 - использовать в Git Bash
