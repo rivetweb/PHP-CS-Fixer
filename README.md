@@ -7,6 +7,8 @@
 
 - выполнить в Git Bash
 ```
+  mkdir ~/bin
+  cd ~/bin
   git clone https://github.com/rivetweb/PHP-CS-Fixer.git
   cd PHP-CS-Fixer
   git checkout bitrix
@@ -25,6 +27,6 @@
 ```
 "settings": {
   ...
-  "php-cs-fixer.executablePath": "~/web/PHP-CS-Fixer/php-cs-fixer.bat"
+  "php-cs-fixer.executablePath": "~/bin/PHP-CS-Fixer/php-cs-fixer.bat"
   ...
 ```
