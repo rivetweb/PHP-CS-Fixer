@@ -24,6 +24,8 @@
 
 ## Использование в Visual Studio Code
 
+- установить расширение https://marketplace.visualstudio.com/items?itemName=junstyle.php-cs-fixer
+
 - открыть Параметры рабочей области
 
 - добавить путь в настройки
