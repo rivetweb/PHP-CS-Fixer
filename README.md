@@ -1,5 +1,5 @@
 
-## Установка
+## Install
 
 - установить Git for Windows http://gitforwindows.org/
 
