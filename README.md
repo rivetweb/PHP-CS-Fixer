@@ -16,7 +16,8 @@
 
 - использовать в Git Bash
 ```
-~/path-to-fixer/php-cs-fixer fix some-file.php
+~/bin/PHP-CS-Fixer/php-cs-fixer fix some-file.php
+~/bin/PHP-CS-Fixer/php-cs-fixer fix some-dir
 ```
 
 ## Использование в Visual Studio Code
