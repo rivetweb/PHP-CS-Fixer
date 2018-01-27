@@ -276,6 +276,10 @@ final class Runner
         // TODO process comments after {
         $result = [];
         foreach (explode("\n", file_get_contents($name)) as $line) {
+            if (trim($line) == "{") {
+                $result[] = $line;
+                continue;
+            }
             $tmp = rtrim($line);
             if (substr($tmp, -1) == "{") {
                 $indent = "";
