@@ -1,5 +1,7 @@
 <?php
 
+// custom config
+
 return PhpCsFixer\Config::create()
     ->setRules(array(
         '@PSR2' => true,
