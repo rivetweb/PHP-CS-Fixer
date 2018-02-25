@@ -30,18 +30,10 @@
 
 - добавить путь в настройки
 
-для Windows
 ```
 "settings": {
   ...
-  "php-cs-fixer.executablePath": "~/bin/PHP-CS-Fixer/php-cs-fixer.bat"
-  ...
-```
-
-для Linux
-```
-"settings": {
-  ...
-  "php-cs-fixer.executablePath": "~/bin/PHP-CS-Fixer/php-cs-fixer"
+  "php-cs-fixer.executablePath": "~/bin/PHP-CS-Fixer/php-cs-fixer",
+  "php-cs-fixer.executablePathWindows": "~/bin/PHP-CS-Fixer/php-cs-fixer.bat",
   ...
 ```
